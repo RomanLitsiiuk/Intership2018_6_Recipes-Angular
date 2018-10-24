@@ -1,0 +1,6 @@
+<div class="favorites">
+  <h1 class="favorites__heading">Favorites</h1>
+  <div class="favorites-wrap">
+    <app-recipe-card class="favorites-wrap__item" *ngFor="let item of favorites" [recipeData]="item"></app-recipe-card>
+  </div>
+</div>

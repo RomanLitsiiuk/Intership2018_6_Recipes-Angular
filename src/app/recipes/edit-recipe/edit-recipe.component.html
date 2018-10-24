@@ -1,0 +1,27 @@
+<article class="edit-recipe">
+  <div class="edit-recipe__image-wrap">
+    <img class="edit-recipe__image" src={{recipe.photoUrl}}>
+    <div class="edit-recipe__headings">
+      <label class="edit-recipe__label edit-recipe__label--big" for="title">Recipe title</label>
+      <input class="edit-recipe__input" id="title" type="text" value="{{recipe.title}}">
+      <label class="edit-recipe__label edit-recipe__label--big" for="description">Recipe description</label>
+      <input class="edit-recipe__input" id="description" type="text" value="{{recipe.description}}">
+      <label class="edit-recipe__label edit-recipe__label--big" for="category">Category ID</label>
+      <input class="edit-recipe__input" id="category" type="text" value="{{recipe.categoryId}}">
+    </div>
+  </div>
+  <div class="edit-ingredients">
+    <h2 class="edit-ingredients__heading">Edit Ingredients</h2>
+    <ul class="edit-ingredients__list">
+      <label>
+        <input class="edit-ingredients__input" type="text" *ngFor="let ingredient of recipe.ingredients" value="{{ingredient}}">
+      </label>
+    </ul>
+  </div>
+  <article class="edit-instructions">
+    <label class="edit-instructions__heading" for="instructions">Edit Instructions</label>
+    <textarea class="edit-instructions__textarea" id="instructions">{{recipe.instructions}}</textarea>
+  </article>
+  <button class="edit-recipe__button" (click)="editRecipe()"><fa class="edit-recipe__icon" name="pencil"></fa>Save</button>
+  <button class="edit-recipe__button" (click)="goToAllRecipes()"><fa class="edit-recipe__icon" name="pencil"></fa>Cancel</button>
+</article>

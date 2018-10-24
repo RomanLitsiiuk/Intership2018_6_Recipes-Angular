@@ -1,0 +1,26 @@
+<article class="recipe">
+  <div class="recipe__image-wrap">
+    <img class="recipe__image" src={{recipe.photoUrl}}>
+    <div class="recipe__headings">
+      <h1 class="recipe__heading">{{recipe.title}}</h1>
+      <p class="recipe__text">{{recipe.description}}</p>
+      <p class="recipe__text">{{recipe.categoryId}}</p>
+    </div>
+  </div>
+  <button class="recipe__button" (click)="editRecipe()"><fa class="recipe__icon" name="pencil" ></fa>Edit</button>
+  <button class="recipe__button" (click)="addToFavorites(recipe)"><fa class="recipe__icon" name="star"></fa>Add to favorites</button>
+  <button class="recipe__button" (click)="goToPurchase()"><fa class="recipe__icon" name="shopping-cart"></fa>Purchases</button>
+  <div class="ingredients">
+    <h2 class="ingredients__heading">Ingredients</h2>
+    <ul class="ingredients__list">
+      <li class="ingredients__item" *ngFor="let ingredient of recipe.ingredients">{{ingredient}}</li>
+    </ul>
+  </div>
+  <article class="instructions">
+    <h2 class="instructions__heading">Instructions</h2>
+    <p class="instructions__text">{{recipe.instructions}}</p>
+  </article>
+</article>
+
+
+

@@ -1,0 +1,85 @@
+.recipe-card {
+  font-family: 'Open Sans Regular';
+  border: 2px solid #efefef;
+  padding: 10px;
+  color: #777777;
+  height: 100%;
+  min-height: 460px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  
+  &__heading {
+    padding-top: 10px;
+    font-size: 20px;
+    height: 60px;
+    
+    &:hover {
+      cursor: pointer;
+      color: blue;
+    }
+  }
+  
+  &__image {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+  }
+  
+  &__text {
+    font-size: 15px;
+    text-align: justify;
+  }
+  
+  &__heart {
+    bottom: 50px;
+    padding: 10px 0;
+    font-size: 24px;
+  }
+  
+  &__footer-wrap {
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+    justify-content: flex-end;
+    flex-grow: 1;
+    flex-shrink: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+  
+  &__footer {
+    height: 50px;
+    width: 100%;
+    align-self: flex-end;
+    border-top: 1px dotted #777777;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  &__icon {
+    padding: 0 5px;
+    font-size: 24px;
+    
+    &:hover {
+      cursor: pointer;
+      color: blue;
+    }
+    
+    &--heart {
+      color: red;
+      
+      &:hover {
+        color: red;
+      }
+    }
+  }
+  
+  &__counter {
+    display: inline-block;
+  }
+}

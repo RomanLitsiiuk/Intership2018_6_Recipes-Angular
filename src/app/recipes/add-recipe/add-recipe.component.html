@@ -1,0 +1,59 @@
+<div class="add-recipe">
+  <form class="adding-form" [formGroup]="newRecipe" (ngSubmit)="onSubmit(newRecipe)">
+    <h2 class="adding-form__title">Add recipe</h2>
+    <div class="adding-form__input-row">
+      <label class="adding-form__label" for="title">Title</label>
+      <input class="adding-form__input" id="title" type="text" required="required" formControlName="newTitle">
+      <div class="error" *ngIf="getInputValue('newTitle').invalid && getInputValue('newTitle').dirty">
+        <p class="error__text">*Input title is invalid!</p>
+      </div>
+    </div>
+    <div class="adding-form__input-row">
+      <label class="adding-form__label" for="description">Description</label>
+      <textarea class="adding-form__input adding-form__input--textarea" id="description" required="required" formControlName="newDescription"></textarea>
+      <div class="error" *ngIf="getInputValue('newDescription').invalid && getInputValue('newDescription').dirty">
+        <p class="error__text">*Input description is required!</p>
+      </div>
+    </div>
+    <div class="adding-form__input-row">
+      <label class="adding-form__label" for="photo">Photo URL</label>
+      <input class="adding-form__input" id="photo" type="url" required="required" formControlName="newImage">
+      <div class="error" *ngIf="getInputValue('newImage').invalid && getInputValue('newImage').dirty">
+        <p class="error__text">*Input url is invalid!</p>
+      </div>
+    </div>
+    <div class="adding-form__input-row adding-form__input-row--horizontal">
+      <p class="">Ingredients</p>
+      <button class="adding-form__button adding-form__button--plus" type="button" (click)="addIngredientField()">
+        <fa class="adding-form__link" name="plus"></fa>
+      </button>
+    </div>
+    <div formArrayName="newIngredients">
+      <div class="adding-form__ingredient" *ngFor="let ingredient of getArray().controls; index as i">
+        <label class="adding-form__label adding-form__label--ingredient">
+          <input class="adding-form__input" type="text" formControlName="{{i}}">
+        </label>
+        <div class="adding-form__close">
+          <button type="button" class="adding-form__button2" (click)="removeIngredient(i)"></button>
+          <fa class="adding-form__icon" name="times"></fa>
+        </div>
+      </div>
+    </div>
+    <div class="adding-form__input-row">
+      <label class="adding-form__label" for="instructions">Instructions</label>
+      <textarea class="adding-form__input adding-form__input--textarea" id="instructions" type="text" required="required" formControlName="newInstructions"></textarea>
+      <div class="error" *ngIf="getInputValue('newInstructions').invalid && getInputValue('newInstructions').touched">
+        <p class="error__text">*Input title is invalid!</p>
+      </div>
+    </div>
+    <div class="adding-form__input-row">
+      <label class="adding-form__label" for="category">Category</label>
+      <input class="adding-form__input" id="category" type="text" required="required" formControlName="newCategory">
+      <div class="error" *ngIf="getInputValue('newCategory').invalid && getInputValue('newCategory').touched">
+        <p class="error__text">*Input title is invalid!</p>
+      </div>
+    </div>
+    <button class="adding-form__button" type="submit">Add</button>
+  </form>
+</div>
+

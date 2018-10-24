@@ -1,0 +1,18 @@
+<header class="header-wrap">
+  <div class="header">
+    <h1 class="header__title" (click)="goToLessons()">Recipes</h1>
+    <nav class="header__navigation">
+      <ul class="navigation">
+        <li class="navigation__button">
+          <a class="navigation__link" routerLink="/recipes" routerLinkActive="navigation__link--active">All Recipes</a>
+        </li>
+        <li class="navigation__button">
+          <a class="navigation__link" routerLink="/favorites" routerLinkActive="navigation__link--active">Favorites</a>
+        </li>
+        <li class="navigation__button">
+          <a class="navigation__link" routerLink="/purchases" routerLinkActive="navigation__link--active">Purchases</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>

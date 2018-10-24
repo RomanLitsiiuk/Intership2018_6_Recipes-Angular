@@ -1,0 +1,30 @@
+<div class="purchases">
+  <h1 class="purchases__heading">Purchases</h1>
+  <form class="purchases__form" action="#" (ngSubmit)="newPurchase(purchaseInput.value)" #purchaseForm="ngForm">
+    <label class="purchases__label" for="ingredient">Ingredient</label>
+    <div class="purchases__input-wrap">
+      <input class="purchases__input"
+             type="text"
+             id="ingredient"
+             name="purchaseValue"
+             required
+             minlength="2"
+             ngModel
+             #purchaseInput="ngModel">
+      <button class="purchases__button" type="submit" [disabled]="!purchaseInput.valid"><fa class="purchases__icon" name="shopping-cart"></fa>Add to purchases</button>
+    </div>
+  </form>
+  <div class="purchases__list-wrap" *ngIf="purchases?.length > 0">
+    <h1 class="purchases__heading">Purchases List</h1>
+    <div class="purchases__list">
+      <div class="purchase" *ngFor="let purchase of purchases">
+        <p>{{purchase}}</p>
+        <div class="purchase__close">
+          <button type="button" class="purchase__button" (click)="removePurchase(purchase)"></button>
+          <fa class="purchase__icon" name="times"></fa>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

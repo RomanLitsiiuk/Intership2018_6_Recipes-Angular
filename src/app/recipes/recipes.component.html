@@ -1,0 +1,7 @@
+<div class="main-wrapper" *ngIf="!children">
+  <button class="add-button" (click)="goToAddRecipe()">Add new recipe!</button>
+  <div class="recipes-wrap">
+    <app-recipe-card class="recipes-wrap__item" *ngFor="let item of recipes" [recipeData]="item"></app-recipe-card>
+  </div>
+</div>
+<router-outlet (activate)='onActivate()' (deactivate)='onDeactivate()'></router-outlet>
